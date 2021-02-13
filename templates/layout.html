@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+</head>
+<body>
+    <!-- Navigation Bar -->
+	<header class="site-header">
+		<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+
+			<div class="container">
+				<a class="navbar-brand mr-4" href="/">
+					<font color="white">Aplikasiku</font>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+					aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarToggle">
+					<div class="navbar-nav mr-auto">
+						<a class="nav-item nav-link" href="/"><input type="submit" class="btn btn-outline-info"
+								value="Home"></a>
+						{% if session['name'] %}
+						    <a class="nav-item nav-link" href="/logout"><input type="submit" class="btn btn-outline-info"
+							    value="Logout"></a>
+						{% else %}
+						    <a class="nav-item nav-link" href="/login"><input type="submit" class="btn btn-outline-info"
+								value="Login"></a>
+						    <a class="nav-item nav-link" href="/register"><input type="submit" class="btn btn-outline-info"
+								value="Register"></a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+	<div class="container">
+		{% block content %}{% endblock %}
+	</div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
