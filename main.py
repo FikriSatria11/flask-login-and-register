@@ -6,6 +6,12 @@ app = Flask(__name__)
 
 # mysql://be9e081a4ebcd6:c0b5643f@us-cdbr-east-03.cleardb.com/heroku_a28ba283f0e21b5?reconnect=true
 
+# app.config['MYSQL_HOST'] = 'localhost'
+# app.config['MYSQL_USER'] = 'root'
+# # app.config['MYSQL_PASSWORD'] = ''
+# app.config['MYSQL_DB'] = 'latihan_flask'
+# app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+
 app.config['MYSQL_HOST'] = 'us-cdbr-east-03.cleardb.com'
 app.config['MYSQL_USER'] = 'be9e081a4ebcd6'
 app.config['MYSQL_PASSWORD'] = 'c0b5643f'
@@ -20,14 +26,19 @@ def home():
 
 def check_user(iniemail):
     email = iniemail
+    # print(email)
     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     cur.execute("select * from pengguna where email=%s;", (email,))
     user = cur.fetchone()
     cur.close()
-    if email == user['email']:
-        return True
-    else:
+    # print(user)
+    # print(type(user))
+    if user == None:
+        # print("false")
         return False
+    else:
+        # print("true")
+        return True
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
