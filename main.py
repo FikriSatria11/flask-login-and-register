@@ -96,6 +96,15 @@ def logout():
     session.clear()
     return render_template('home.html')
 
+@app.route("/test")
+def test():
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cur.execute("select * from pengguna ;")
+    user = cur.fetchone()
+    cur.close()
+
+    return render_template('test.html', data=user)
+
 if __name__ == '__main__':
     app.secret_key = "inisecretkey2020"
     app.run(debug=True)
