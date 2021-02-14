@@ -7,16 +7,25 @@ app = Flask(__name__)
 mysql = MySQL()
 # mysql://be9e081a4ebcd6:c0b5643f@us-cdbr-east-03.cleardb.com/heroku_a28ba283f0e21b5?reconnect=true
 
+
 # app.config['MYSQL_HOST'] = 'localhost'
 # app.config['MYSQL_USER'] = 'root'
 # # app.config['MYSQL_PASSWORD'] = ''
 # app.config['MYSQL_DB'] = 'latihan_flask'
 # app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
+# heroku
+# app.config['MYSQL_HOST'] = 'us-cdbr-east-03.cleardb.com'
+# app.config['MYSQL_USER'] = 'be9e081a4ebcd6'
+# app.config['MYSQL_PASSWORD'] = 'c0b5643f'
+# app.config['MYSQL_DB'] = 'heroku_a28ba283f0e21b5'
+# app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+
+# mysql://bf4433c4e8d563:eb3288bd@us-cdbr-east-03.cleardb.com/heroku_0d58f5e5eb33d90?reconnect=true
 app.config['MYSQL_HOST'] = 'us-cdbr-east-03.cleardb.com'
-app.config['MYSQL_USER'] = 'be9e081a4ebcd6'
-app.config['MYSQL_PASSWORD'] = 'c0b5643f'
-app.config['MYSQL_DB'] = 'heroku_a28ba283f0e21b5'
+app.config['MYSQL_USER'] = 'bf4433c4e8d563'
+app.config['MYSQL_PASSWORD'] = 'eb3288bd'
+app.config['MYSQL_DB'] = 'heroku_0d58f5e5eb33d90'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql.init_app(app)
