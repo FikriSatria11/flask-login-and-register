@@ -4,7 +4,7 @@ import bcrypt
 # import mysql.connector
 
 app = Flask(__name__)
-
+mysql = MySQL()
 # mysql://be9e081a4ebcd6:c0b5643f@us-cdbr-east-03.cleardb.com/heroku_a28ba283f0e21b5?reconnect=true
 
 # app.config['MYSQL_HOST'] = 'localhost'
@@ -19,7 +19,7 @@ app.config['MYSQL_PASSWORD'] = 'c0b5643f'
 app.config['MYSQL_DB'] = 'heroku_a28ba283f0e21b5'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
-mysql = MySQL(app)
+mysql.init_app(app)
 
 @app.route("/")
 def home():
