@@ -16,12 +16,13 @@ mysql = MySQL()
 
 # heroku
 # mysql://be9e081a4ebcd6:c0b5643f@us-cdbr-east-03.cleardb.com/heroku_a28ba283f0e21b5?reconnect=true
+app.config['DATABASE_URL'] = 'mysql://be9e081a4ebcd6:c0b5643f@us-cdbr-east-03.cleardb.com/heroku_a28ba283f0e21b5?reconnect=true'
 app.config['MYSQL_HOST'] = 'us-cdbr-east-03.cleardb.com'
 app.config['MYSQL_USER'] = 'be9e081a4ebcd6'
 app.config['MYSQL_PASSWORD'] = 'c0b5643f'
 app.config['MYSQL_DB'] = 'heroku_a28ba283f0e21b5'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
-app.config['SECRET_KEY'] = "inisecretkey2020"
+app.config['SECRET_KEY'] = 'inisecretkey2020'
 
 # mysql://bf4433c4e8d563:eb3288bd@us-cdbr-east-03.cleardb.com/heroku_0d58f5e5eb33d90?reconnect=true
 # app.config['MYSQL_HOST'] = 'us-cdbr-east-03.cleardb.com'
@@ -117,5 +118,5 @@ def test():
     return render_template('test.html', data=user)
 
 if __name__ == '__main__':
-    app.secret_key = "inisecretkey2020"
+    # app.secret_key = "inisecretkey2020"
     app.run(debug=True)
