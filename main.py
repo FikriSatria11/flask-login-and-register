@@ -21,6 +21,7 @@ app.config['MYSQL_USER'] = 'be9e081a4ebcd6'
 app.config['MYSQL_PASSWORD'] = 'c0b5643f'
 app.config['MYSQL_DB'] = 'heroku_a28ba283f0e21b5'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+app.config['SECRET_KEY'] = "inisecretkey2020"
 
 # mysql://bf4433c4e8d563:eb3288bd@us-cdbr-east-03.cleardb.com/heroku_0d58f5e5eb33d90?reconnect=true
 # app.config['MYSQL_HOST'] = 'us-cdbr-east-03.cleardb.com'
