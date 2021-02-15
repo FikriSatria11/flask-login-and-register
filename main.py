@@ -108,7 +108,7 @@ def logout():
     session.clear()
     return render_template('home.html')
 
-@app.route("/test")
+@app.route("/test", methods=["GET", "POST"])
 def test():
     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     cur.execute("select * from pengguna ;")
