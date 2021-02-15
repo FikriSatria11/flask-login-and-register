@@ -110,7 +110,7 @@ def logout():
 
 @app.route("/test", methods=["GET", "POST"])
 def test():
-    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cur = mysql.connection.cursor()
     cur.execute("select * from pengguna ;")
     user = cur.fetchone()
     cur.close()
